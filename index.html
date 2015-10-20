@@ -1,0 +1,257 @@
+<html>
+<head>
+    <title>LIMS-Prototype</title>
+    <link href="stylesheets/style.css" type="text/css" rel="stylesheet"/>
+    <script>
+
+        function __$(id) {
+            return document.getElementById(id);
+        }
+
+        function resize() {
+
+            if (__$("main")) {
+
+                __$("main").style.height = (window.innerHeight - __$("banner").offsetHeight - 96) + "px";
+
+            }
+
+        }
+
+        function toggleDetails(control) {
+
+            if (!control)
+                return;
+
+            if (__$("tbody")) {
+
+                if (control.innerHTML.trim() == "+") {
+
+                    control.innerHTML = "-";
+
+                    __$("tbody").style.display = "table";
+
+                } else {
+
+                    control.innerHTML = "+";
+
+                    __$("tbody").style.display = "none";
+
+                }
+
+            }
+
+            resize();
+
+        }
+
+    </script>
+    <style>
+        li {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border: 1px solid #22396f;
+            margin: 2px;
+            cursor: pointer;
+            color: #22396f;
+        }
+
+        li:hover {
+            background-color: #22396f;
+            color: #fff;
+        }
+        .label {
+            color: #22396f;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .selectedSection {
+            background-color: #22396f;
+            color: #fff;
+        }
+    </style>
+</head>
+<body onresize="resize()" onload="resize()">
+<table style="border-collapse: collapse; width: 100%;" cellpadding="5" cellspacing="0" border="0">
+    <tr style="background-color: #22396f; color: #fff;">
+        <th align="left" style="font-size: 24px; padding-left: 10px;">
+            LIMS
+        </th>
+        <th align="right" id="section">
+            Microbiology
+        </th>
+        <td style="padding-left: 10px; padding-right: 10px; padding-top: 5px; width: 140px;">
+            <div id="tasks" class="bht-menu" style="padding: 2px;">
+                <table style="color: #fff; margin: auto;">
+                    <tr>
+                        <td>
+                            <img src="images/tasks.png" height="30"/>
+                        </td>
+                        <td style="font-size: 14px; padding-left: 5px; width: 30px;">
+                            Tasks
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 200px; vertical-align: top; border-right: 1px solid #22396f;" rowspan="2">
+            <ul style="list-style: none; padding: 0px;">
+                <li id="sectionMicrobiology" onclick="loadSectionMenu('microbiology')">
+                    Microbiology
+                </li>
+                <li id="sectionParasitology" onclick="loadSectionMenu('parasitology')">
+                    Parasitology
+                </li>
+                <li id="sectionHaematology" onclick="loadSectionMenu('haematology')">
+                    Haematology
+                </li>
+                <li id="sectionBloodBank" onclick="loadSectionMenu('bloodbank')">
+                    Blood bank
+                </li>
+                <li id="sectionPCR" onclick="loadSectionMenu('pcr')">
+                    PCR
+                </li>
+                <li id="sectionSerology" onclick="loadSectionMenu('serology')">
+                    Serology
+                </li>
+                <li id="sectionBiochemistry" onclick="loadSectionMenu('biochemistry')">
+                    Biochemistry
+                </li>
+            </ul>
+        </td>
+        <td colspan="2">
+            <table id="banner" style="width: 100%; border-collapse: collapse;" border="0" cellpadding="5">
+                <tr>
+                    <td align="right" style="width: 200px; border-right: 1px solid #22396f;" class="label">
+                        Name of patient:
+                    </td>
+                    <td id="patient_name" colspan="3">
+                        &nbsp;
+                    </td>
+                    <td align="right" style="width: 200px; border-right: 1px solid #22396f;" class="label">
+                        Age:
+                    </td>
+                    <td id="age">
+                        &nbsp;
+                    </td>
+                    <td align="right" style="width: 200px; border-right: 1px solid #22396f;" class="label">
+                        Sex:
+                    </td>
+                    <td id="sex">
+                        &nbsp;
+                    </td>
+                    <td style="width: 20px;">
+                        <div id="expand" style="border-radius: 15px; width: 30px; height: 30px; background-color: #000;
+                                color: #fff; text-align: center; vertical-align: middle; padding: 0px; font-size: 20px;
+                                font-weight: bold; cursor: pointer;" onclick="toggleDetails(this)">
+                            -
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9" style="padding: 0px;">
+
+                        <table id="tbody" style="display: table; width: 100%;" cellpadding="5" cellspacing="0">
+                            <tr>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Ward/Cost centre:
+                                </td>
+                                <td id="ward" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Collected by:
+                                </td>
+                                <td id="collected_by" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Date of collection:
+                                </td>
+                                <td id="date_of_collection" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Time of collection:
+                                </td>
+                                <td id="time_of_collection" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Clinical information/History:
+                                </td>
+                                <td id="clinical_history" colspan="3" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Antibiotic history (Recent/current) :
+                                </td>
+                                <td id="antibiotic_history" colspan="3" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Requesting Clinician:
+                                </td>
+                                <td id="requesting_clinician" colspan="3" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td colspan="3" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Specimen type:
+                                </td>
+                                <td id="specimen_type" colspan="3" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Examination required
+                                </td>
+                                <td colspan="3" id="examination_required" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 0px;" colspan="2">
+            <div id="main" style="width: 100%; border-top: 1px solid #22396f;">
+                <iframe id="iframe" src="views/microbiology/home.html" style="width: 100%; height: 100%; border: none; border-collapse: collapse;"></iframe>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" style="background-color: #22396f;">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+<script src="javascripts/bht-menu.js"></script>
+
+<script src="javascripts/menu-content.js"></script>
+
+<script>
+
+    loadSectionMenu("microbiology");
+
+</script>
+
+</body>
+</html>
