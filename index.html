@@ -100,25 +100,25 @@
         <td style="width: 200px; vertical-align: top; border-right: 1px solid #22396f;" rowspan="2">
             <ul style="list-style: none; padding: 0px;">
                 <li id="sectionMicrobiology" onclick="loadSectionMenu('microbiology')">
-                    Microbiology
+                    Enter Result
                 </li>
                 <li id="sectionParasitology" onclick="loadSectionMenu('parasitology')">
-                    Parasitology
+                    Verify Result
                 </li>
                 <li id="sectionHaematology" onclick="loadSectionMenu('haematology')">
-                    Haematology
+                    Reject Sample
                 </li>
                 <li id="sectionBloodBank" onclick="loadSectionMenu('bloodbank')">
-                    Blood bank
+                    Refer Sample
                 </li>
                 <li id="sectionPCR" onclick="loadSectionMenu('pcr')">
-                    PCR
+                    Patient History
                 </li>
                 <li id="sectionSerology" onclick="loadSectionMenu('serology')">
-                    Serology
+                    Printouts
                 </li>
                 <li id="sectionBiochemistry" onclick="loadSectionMenu('biochemistry')">
-                    Biochemistry
+                    Misc. Tools
                 </li>
             </ul>
         </td>
@@ -129,26 +129,22 @@
                         Name of patient:
                     </td>
                     <td id="patient_name" colspan="3">
-                        &nbsp;
+                        &nbsp;Moses Chiphwanya
                     </td>
                     <td align="right" style="width: 200px; border-right: 1px solid #22396f;" class="label">
                         Age:
                     </td>
                     <td id="age">
-                        &nbsp;
+                        &nbsp;21
                     </td>
                     <td align="right" style="width: 200px; border-right: 1px solid #22396f;" class="label">
                         Sex:
                     </td>
-                    <td id="sex">
-                        &nbsp;
+                    <td id="sex" >
+                        &nbsp;Male
                     </td>
                     <td style="width: 20px;">
-                        <div id="expand" style="border-radius: 15px; width: 30px; height: 30px; background-color: #000;
-                                color: #fff; text-align: center; vertical-align: middle; padding: 0px; font-size: 20px;
-                                font-weight: bold; cursor: pointer;" onclick="toggleDetails(this)">
-                            -
-                        </div>
+                        &nbsp;
                     </td>
                 </tr>
                 <tr>
@@ -156,75 +152,58 @@
 
                         <table id="tbody" style="display: table; width: 100%;" cellpadding="5" cellspacing="0">
                             <tr>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                <td align="right" style="width: 100px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
                                     Ward/Cost centre:
                                 </td>
                                 <td id="ward" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                    &nbsp;Ward 7B
                                 </td>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                <td align="right" style="width: 100px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
                                     Collected by:
                                 </td>
                                 <td id="collected_by" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                    &nbsp;Elvis Fuko
                                 </td>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                <td align="right" style="width: 100px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
                                     Date of collection:
                                 </td>
                                 <td id="date_of_collection" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                    &nbsp;21 Oct, 2015
                                 </td>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Time of collection:
-                                </td>
+                                
                                 <td id="time_of_collection" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                    &nbsp;11:37 AM
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Clinical information/History:
+                                    Accession Number:
                                 </td>
-                                <td id="clinical_history" colspan="3" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                <td id="accession_number"  style=" border-top: 1px solid #22396f;">
+                                    &nbsp;KCH000001
                                 </td>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Antibiotic history (Recent/current) :
+                                <td align="right"  style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    	Specimen Type :
                                 </td>
-                                <td id="antibiotic_history" colspan="3" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+                                <td id="sample_type"colspan="2"  style=" border-top: 1px solid #22396f;">
+                                    &nbsp;CSF
                                 </td>
-                            </tr>
-                            <tr>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Requesting Clinician:
+                                <td align="right"  style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
+                                    Requesting Clinician :
                                 </td>
-                                <td id="requesting_clinician" colspan="3" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
-                                </td>
-                                <td align="right" style="width: 200px; border-top: 1px solid #22396f;">
-                                    &nbsp;
-                                </td>
-                                <td colspan="3" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
+																<td id="requesting_clinician" colspan="2" style=" border-top: 1px solid #22396f;">
+                                    &nbsp;Moses Phundi 
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Specimen type:
+                                    Clinical Information:
                                 </td>
-                                <td id="specimen_type" colspan="3" style=" border-top: 1px solid #22396f;">
-                                    &nbsp;
-                                </td>
-                                <td align="right" style="width: 200px; border-right: 1px solid #22396f; border-top: 1px solid #22396f;" class="label">
-                                    Examination required
-                                </td>
-                                <td colspan="3" id="examination_required" style=" border-top: 1px solid #22396f;">
+                                <td id="clinical_information" colspan="7" style=" border-top: 1px solid #22396f;">
                                     &nbsp;
                                 </td>
                             </tr>
-                        </table>
-
+                          </table>
                     </td>
                 </tr>
             </table>
